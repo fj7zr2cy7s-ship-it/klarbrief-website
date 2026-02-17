@@ -617,6 +617,26 @@ footer a { color: var(--teal); text-decoration: none; }
   .legal { padding: 36px 24px; }
 }
 
+/* === KONTAKT FORM === */
+.kontakt-section { padding: 72px 48px; background: var(--cloud); }
+.kontakt-form {
+  max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;
+}
+.kontakt-form input, .kontakt-form textarea {
+  padding: 14px 18px; border-radius: 12px; border: 1.5px solid rgba(107,113,148,0.12);
+  background: var(--white); font-size: 0.92rem; font-family: 'Inter', sans-serif;
+  color: var(--ink); transition: border-color 0.2s; outline: none; resize: vertical;
+}
+.kontakt-form input:focus, .kontakt-form textarea:focus { border-color: var(--teal); }
+.kontakt-btn {
+  padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: white; font-size: 0.95rem; font-weight: 600; font-family: 'Inter', sans-serif;
+  transition: all 0.3s; box-shadow: 0 6px 24px var(--teal-glow);
+}
+.kontakt-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px var(--teal-glow); }
+@media (max-width: 960px) { .kontakt-section { padding: 56px 24px; } }
+
 /* === PRICING === */
 .pricing { padding: 72px 48px; background: var(--white); }
 .pricing-grid {
@@ -1081,6 +1101,21 @@ footer a { color: var(--teal); text-decoration: none; }
 </section>
 
 <!-- Legal -->
+<!-- KONTAKT -->
+<section class="kontakt-section" id="kontakt">
+  <div class="section-header">
+    <div class="section-tag reveal">Kontakt</div>
+    <h2 class="reveal">Schreib uns</h2>
+    <p class="section-desc reveal">Fragen, Feedback oder Anregungen? Wir antworten innerhalb von 24 Stunden.</p>
+  </div>
+  <form class="kontakt-form reveal" action="mailto:klarbrief@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="Name" placeholder="Dein Name" required>
+    <input type="email" name="E-Mail" placeholder="Deine E-Mail-Adresse" required>
+    <textarea name="Nachricht" placeholder="Deine Nachricht..." rows="4" required></textarea>
+    <button type="submit" class="kontakt-btn">Nachricht senden</button>
+  </form>
+</section>
+
 <section class="legal" id="legal">
   <div class="legal-blocks">
     <div class="legal-block">
@@ -1145,23 +1180,27 @@ footer a { color: var(--teal); text-decoration: none; }
     <div class="legal-block">
       <button class="legal-toggle" data-i18n="legal_imprint">ℹ️ Impressum</button>
       <div class="legal-content"><div class="legal-inner">
-        <h4>Angaben gemäß § 5 TMG</h4>
+        <h4>Angaben gemäß § 5 DDG</h4>
         <p>Maximilian von Korff<br>
         Martinikirchhof 3<br>
         32423 Minden<br>
         Deutschland</p>
 
         <h4>Kontakt</h4>
-        <p>E-Mail: klarbrief@gmail.com</p>
+        <p>E-Mail: klarbrief@gmail.com<br>
+        Kontaktformular: <a href="#kontakt" style="color:var(--teal)">Zum Kontaktformular</a></p>
 
-        <h4>Verantwortlich für den Inhalt gem. § 55 Abs. 2 RStV</h4>
+        <h4>Umsatzsteuer</h4>
+        <p>Kleinunternehmer gemäß § 19 UStG — Umsatzsteuer-Identifikationsnummer nicht vorhanden.</p>
+
+        <h4>Verantwortlich für den Inhalt gem. § 18 Abs. 2 MStV</h4>
         <p>Maximilian von Korff<br>
         Martinikirchhof 3<br>
         32423 Minden<br>
         Deutschland</p>
 
         <h4>Streitschlichtung</h4>
-        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" style="color:var(--teal)">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
       </div></div>
     </div>
   </div>

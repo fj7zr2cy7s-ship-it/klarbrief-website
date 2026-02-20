@@ -1533,4 +1533,14 @@ try { savedLang = localStorage.getItem('kb_lang'); } catch(e) {}
 if (savedLang && supported.includes(savedLang)) {
   setLang(savedLang);
 } else {
-  const browserLangs = navigator.languages || [navigator.languag
+  const browserLangs = navigator.languages || [navigator.language];
+  let detected = 'de';
+  for (const bl of browserLangs) {
+    const code = bl.split('-')[0].toLowerCase();
+    if (langMap[code]) { detected = langMap[code]; break; }
+  }
+  setLang(detected);
+}
+</script>
+</body>
+</html>

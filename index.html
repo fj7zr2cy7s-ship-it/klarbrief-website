@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KlarBrief — Briefe scannen. Sofort verstehen. In deiner Muttersprache.</title>
+<title>KlarBrief — Briefe scannen. Sofort verstehen.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -616,107 +616,6 @@ footer a { color: var(--teal); text-decoration: none; }
   .faq { padding: 56px 24px; }
   .legal { padding: 36px 24px; }
 }
-
-/* === KONTAKT FORM === */
-.kontakt-section { padding: 72px 48px; background: var(--cloud); }
-.kontakt-form {
-  max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;
-}
-.kontakt-form input, .kontakt-form textarea {
-  padding: 14px 18px; border-radius: 12px; border: 1.5px solid rgba(107,113,148,0.12);
-  background: var(--white); font-size: 0.92rem; font-family: 'Inter', sans-serif;
-  color: var(--ink); transition: border-color 0.2s; outline: none; resize: vertical;
-}
-.kontakt-form input:focus, .kontakt-form textarea:focus { border-color: var(--teal); }
-.kontakt-btn {
-  padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer;
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: white; font-size: 0.95rem; font-weight: 600; font-family: 'Inter', sans-serif;
-  transition: all 0.3s; box-shadow: 0 6px 24px var(--teal-glow);
-}
-.kontakt-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px var(--teal-glow); }
-@media (max-width: 960px) { .kontakt-section { padding: 56px 24px; } }
-
-/* === PRICING === */
-.pricing { padding: 72px 48px; background: var(--white); }
-.pricing-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 20px; max-width: 1000px; margin: 0 auto;
-}
-.p-card {
-  background: var(--cloud); border-radius: 24px;
-  padding: 36px 28px; text-align: center;
-  border: 2px solid transparent;
-  transition: all 0.4s; position: relative;
-}
-.p-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(26,29,46,0.07); }
-.p-card--pop {
-  background: var(--white); border-color: var(--teal);
-  box-shadow: 0 16px 48px var(--teal-glow);
-  transform: scale(1.04);
-}
-.p-card--pop:hover { transform: scale(1.04) translateY(-6px); }
-.p-badge {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: white; font-size: 0.72rem; font-weight: 700;
-  padding: 6px 18px; border-radius: 100px; white-space: nowrap;
-  letter-spacing: 0.03em;
-}
-.p-name {
-  font-family: 'Syne', sans-serif; font-size: 1.2rem;
-  font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em;
-}
-.p-price {
-  font-family: 'Syne', sans-serif; font-size: 2.4rem;
-  font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px;
-}
-.p-price .p-currency { font-size: 1.2rem; vertical-align: super; }
-.p-price .p-period { font-size: 0.85rem; font-weight: 400; color: var(--slate); }
-.p-yearly {
-  font-size: 0.82rem; color: var(--teal-dark); font-weight: 600;
-  margin-bottom: 20px; min-height: 20px;
-}
-.p-features { list-style: none; text-align: left; margin-bottom: 28px; }
-.p-features li {
-  padding: 8px 0; font-size: 0.88rem; color: var(--ink-light);
-  display: flex; align-items: center; gap: 10px; font-weight: 400;
-  border-bottom: 1px solid rgba(107,113,148,0.06);
-}
-.p-features li:last-child { border-bottom: none; }
-.p-features li::before {
-  content: '\2713'; color: var(--teal); font-weight: 700; font-size: 0.7rem;
-  width: 20px; height: 20px; background: var(--teal-light); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.p-features li.disabled { color: var(--slate); opacity: 0.5; }
-.p-features li.disabled::before { content: '—'; color: var(--slate); background: var(--cloud); }
-.p-cta {
-  display: inline-flex; width: 100%; justify-content: center;
-  padding: 14px 24px; border-radius: 12px; font-weight: 600;
-  font-size: 0.92rem; text-decoration: none; transition: all 0.3s;
-}
-.p-cta--outline {
-  background: var(--white); color: var(--ink); border: 1.5px solid rgba(107,113,148,0.15);
-}
-.p-cta--outline:hover { border-color: var(--teal); color: var(--teal); }
-.p-cta--fill {
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: white; border: none; box-shadow: 0 6px 24px var(--teal-glow);
-}
-.p-cta--fill:hover { transform: translateY(-2px); box-shadow: 0 10px 32px var(--teal-glow); }
-.p-cancel { font-size: 0.75rem; color: var(--slate); margin-top: 10px; }
-.pricing-note {
-  text-align: center; margin-top: 28px; font-size: 0.85rem; color: var(--slate);
-}
-.pricing-note strong { color: var(--coral); }
-.hero-cancel { font-size: 0.82rem; color: var(--slate); margin-top: 12px; }
-@media (max-width: 960px) {
-  .pricing { padding: 56px 24px; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 380px; }
-  .p-card--pop { transform: none; }
-  .p-card--pop:hover { transform: translateY(-6px); }
-}
 </style>
 </head>
 <body>
@@ -724,13 +623,12 @@ footer a { color: var(--teal); text-decoration: none; }
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img class="nav-logo-icon" src="image_1.png" alt="KlarBrief Logo">
+    <img class="nav-logo-icon" src="images/image_1.png" alt="KlarBrief Logo">
     KlarBrief
   </a>
   <div class="nav-links">
     <a href="#features" data-i18n="nav_features">Features</a>
     <a href="#how" data-i18n="nav_how">So funktioniert's</a>
-    <a href="#pricing" data-i18n="nav_pricing">Preise</a>
   </div>
   <div class="nav-right">
     <a href="#download" class="nav-appstore">
@@ -761,18 +659,18 @@ footer a { color: var(--teal); text-decoration: none; }
     <div class="hero-grid">
       <div class="hero-text">
         <div class="hero-badge" data-i18n="hero_badge">KI-gestützte Dokumentanalyse</div>
-        <h1 data-i18n-html="hero_title">Briefe scannen.<br><span class="coral">Sofort</span> <span class="teal">verstehen.</span><br>In deiner <span class="teal">Muttersprache.</span></h1>
+        <h1 data-i18n-html="hero_title">Briefe scannen.<br><span class="coral">Sofort</span> <span class="teal">verstehen.</span></h1>
         <p class="hero-sub" data-i18n="hero_sub">
-          Scanne Rechnungen, Briefe und Dokumente — KlarBrief erkennt automatisch Beträge, Fristen und Zahlungsdaten. Alles wird in deiner Sprache erklärt und übersetzt — 6 Sprachen verfügbar. Inklusive QR-Code für die sofortige Überweisung und vorgefertigte E-Mail-Antworten mit allen Daten aus dem Scan — antippen, absenden, fertig.
+          Scanne Rechnungen, Briefe und Dokumente — KlarBrief erkennt automatisch Beträge, 
+          Fristen und Zahlungsdaten. Inklusive sofortigem QR-Code für die Überweisung.
         </p>
         <div class="hero-actions">
           <a href="#download" class="btn-primary">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            <span data-i18n="btn_appstore">Jetzt im App Store</span>
+            <span data-i18n="btn_appstore">App Store</span>
           </a>
           <a href="#how" class="btn-secondary" data-i18n="btn_how">So funktioniert's →</a>
         </div>
-        <div class="hero-cancel" data-i18n="hero_cancel">✓ 3 Scans kostenlos · Jederzeit kündbar</div>
         <div class="hero-stats">
           <div>
             <div class="stat-num" data-target="99" data-suffix="%">0%</div>
@@ -796,7 +694,7 @@ footer a { color: var(--teal); text-decoration: none; }
           <div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
-              <img src="image_2.png" alt="KlarBrief App">
+              <img src="images/image_2.png" alt="KlarBrief App">
             </div>
           </div>
 
@@ -830,12 +728,12 @@ footer a { color: var(--teal); text-decoration: none; }
       <div>
         <div class="demo-phone">
           <div class="demo-screen" id="demoScreen">
-            <img data-screen="home" class="active" src="image_2.png" alt="Home" id="demoImgHome">
-            <img data-screen="analysis" src="image_3.png" alt="Analyse" loading="lazy">
-            <img data-screen="actions" src="image_4.png" alt="Aktionen" loading="lazy">
-            <img data-screen="qrcodes" src="image_5.png" alt="QR-Codes" loading="lazy">
-            <img data-screen="history" src="image_6.png" alt="Verlauf" loading="lazy">
-            <img data-screen="settings" src="image_7.png" alt="Einstellungen" loading="lazy">
+            <img data-screen="home" class="active" src="" alt="Home" id="demoImgHome">
+            <img data-screen="analysis" src="images/image_3.png" alt="Analyse" loading="lazy">
+            <img data-screen="actions" src="images/image_4.png" alt="Aktionen" loading="lazy">
+            <img data-screen="qrcodes" src="images/image_5.png" alt="QR-Codes" loading="lazy">
+            <img data-screen="history" src="images/image_6.png" alt="Verlauf" loading="lazy">
+            <img data-screen="settings" src="images/image_7.png" alt="Einstellungen" loading="lazy">
           </div>
         </div>
         <div class="demo-tabs" id="demoTabs">
@@ -991,64 +889,6 @@ footer a { color: var(--teal); text-decoration: none; }
 </section>
 
 
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="section-header">
-    <div class="section-tag reveal" data-i18n="price_tag">Preise</div>
-    <h2 class="reveal" data-i18n="price_title">Einfach. Transparent. Fair.</h2>
-    <p class="section-desc reveal" data-i18n="price_desc">Starte kostenlos — upgrade wenn du bereit bist.</p>
-  </div>
-
-  <div class="pricing-grid">
-    <div class="p-card reveal">
-      <div class="p-name" data-i18n="p_free_name">Free</div>
-      <div class="p-price">0<span class="p-currency">€</span></div>
-      <div class="p-yearly" data-i18n="p_free_sub">3 Scans zum Testen</div>
-      <ul class="p-features">
-        <li data-i18n="pf_scan3">3 Dokumente scannen</li>
-        <li data-i18n="pf_ai">KI-Analyse & OCR</li>
-        <li data-i18n="pf_qr">QR-Code Überweisung</li>
-        <li class="disabled" data-i18n="pf_no_unlimited">Unbegrenzte Scans</li>
-        <li class="disabled" data-i18n="pf_no_lang">6 Sprachen</li>
-      </ul>
-      <a href="#download" class="p-cta p-cta--outline" data-i18n="p_free_cta">Kostenlos starten</a>
-    </div>
-
-    <div class="p-card p-card--pop reveal">
-      <div class="p-badge" data-i18n="p_pro_badge">BELIEBTESTE WAHL</div>
-      <div class="p-name" data-i18n="p_pro_name">Pro</div>
-      <div class="p-price"><span class="p-currency">€</span>3,49<span class="p-period">/Mo</span></div>
-      <div class="p-yearly" data-i18n="p_pro_yearly">oder 33,49€/Jahr (spare 20%)</div>
-      <ul class="p-features">
-        <li data-i18n="pf_unlimited">Unbegrenzt scannen</li>
-        <li data-i18n="pf_6lang">6 Sprachen & Übersetzung</li>
-        <li data-i18n="pf_qrfull">QR-Code & Schnellantworten</li>
-        <li data-i18n="pf_history">Dokumentenverlauf</li>
-        <li data-i18n="pf_alarm">Frist-Alarm</li>
-      </ul>
-      <a href="#download" class="p-cta p-cta--fill" data-i18n="p_pro_cta">Jetzt starten</a>
-      <div class="p-cancel" data-i18n="p_cancel">Jederzeit kündbar. Keine versteckten Kosten.</div>
-    </div>
-
-    <div class="p-card reveal">
-      <div class="p-name" data-i18n="p_plus_name">Pro+</div>
-      <div class="p-price"><span class="p-currency">€</span>9,99<span class="p-period">/Mo</span></div>
-      <div class="p-yearly" data-i18n="p_plus_yearly">95,90€/Jahr (spare 20%)</div>
-      <ul class="p-features">
-        <li data-i18n="pf_all_pro">Alles aus Pro</li>
-        <li data-i18n="pf_priority">Prioritäts-Analyse</li>
-        <li data-i18n="pf_export">Export & Archiv</li>
-        <li data-i18n="pf_multi">Multi-Dokument Scan</li>
-        <li data-i18n="pf_support">Prioritäts-Support</li>
-      </ul>
-      <a href="#download" class="p-cta p-cta--outline" data-i18n="p_plus_cta">Pro+ wählen</a>
-    </div>
-  </div>
-
-  <p class="pricing-note reveal" data-i18n-html="price_note">🚀 <strong>Frühbucher-Preis</strong> — Sichere dir den Launch-Preis, solange er gilt!</p>
-</section>
-
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="section-header">
@@ -1060,7 +900,7 @@ footer a { color: var(--teal); text-decoration: none; }
   <div class="faq-list">
     <div class="faq-item reveal">
       <button class="faq-q" data-i18n="fq1">Ist KlarBrief wirklich kostenlos?</button>
-      <div class="faq-a"><p>Ja! Du bekommst 3 kostenlose Scans zum Testen. Danach ab 3,49€/Monat oder 33,49€/Jahr — jederzeit kündbar.</p></div>
+      <div class="faq-a"><p>Ja! Du bekommst 3 kostenlose Scans zum Testen. Danach kannst du auf Pro (9,99€/Monat), Business (19,99€/Monat) oder Lifetime (179€ einmalig) upgraden — ganz ohne Druck.</p></div>
     </div>
     <div class="faq-item reveal">
       <button class="faq-q" data-i18n="fq2">Wie sicher sind meine Dokumente?</button>
@@ -1088,10 +928,10 @@ footer a { color: var(--teal); text-decoration: none; }
 <section class="cta" id="download">
   <div class="cta-card reveal">
     <h2 data-i18n-html="cta_title">Bereit für weniger<br>Papierchaos?</h2>
-    <p class="section-desc" data-i18n="cta_desc">Starte kostenlos mit 3 Scans. Danach ab 3,49€/Monat — jederzeit kündbar.</p>
+    <p class="section-desc" data-i18n="cta_desc">Lade KlarBrief kostenlos herunter. 3 Scans gratis — dann Premium für unbegrenzte Nutzung.</p>
     <a href="#" class="btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      <span data-i18n="cta_btn">Jetzt im App Store</span>
+      <span data-i18n="cta_btn">Kostenlos laden</span>
     </a>
     <div class="cta-bottom">
       <a href="#" class="cta-pill" data-i18n="cta_pill1">🌍 Weltweit im App Store</a>
@@ -1101,21 +941,6 @@ footer a { color: var(--teal); text-decoration: none; }
 </section>
 
 <!-- Legal -->
-<!-- KONTAKT -->
-<section class="kontakt-section" id="kontakt">
-  <div class="section-header">
-    <div class="section-tag reveal">Kontakt</div>
-    <h2 class="reveal">Schreib uns</h2>
-    <p class="section-desc reveal">Fragen, Feedback oder Anregungen? Wir antworten innerhalb von 24 Stunden.</p>
-  </div>
-  <form class="kontakt-form reveal" action="mailto:klarbrief@gmail.com" method="POST" enctype="text/plain">
-    <input type="text" name="Name" placeholder="Dein Name" required>
-    <input type="email" name="E-Mail" placeholder="Deine E-Mail-Adresse" required>
-    <textarea name="Nachricht" placeholder="Deine Nachricht..." rows="4" required></textarea>
-    <button type="submit" class="kontakt-btn">Nachricht senden</button>
-  </form>
-</section>
-
 <section class="legal" id="legal">
   <div class="legal-blocks">
     <div class="legal-block">
@@ -1158,7 +983,7 @@ footer a { color: var(--teal); text-decoration: none; }
         <p>KlarBrief ermöglicht das Scannen und KI-gestützte Analysieren von Dokumenten wie Rechnungen und Briefen. Die App extrahiert Informationen wie Beträge, IBANs und Fristen und generiert QR-Codes für Überweisungen. Die Ergebnisse der Analyse dienen als Hilfestellung — eine 100%ige Genauigkeit kann nicht garantiert werden.</p>
 
         <h4>3. Kostenlose Nutzung und Premium</h4>
-        <p>Die App bietet 3 kostenlose Scans pro Monat. Für unbegrenzte Nutzung stehen kostenpflichtige Abonnements (Pro, Pro+) zur Verfügung. Alle Abonnements beinhalten eine 7-tägige kostenlose Testphase. Preise und Leistungen der einzelnen Pläne sind im App Store bzw. in der App einsehbar. Abonnements verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ablauf der aktuellen Periode gekündigt werden.</p>
+        <p>Die App bietet 3 kostenlose Scans. Für unbegrenzte Nutzung stehen kostenpflichtige Abonnements (Pro, Business) sowie ein einmaliger Lifetime-Kauf zur Verfügung. Preise und Leistungen der einzelnen Pläne sind im App Store bzw. in der App einsehbar. Abonnements verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ablauf der aktuellen Periode gekündigt werden.</p>
 
         <h4>4. Haftungsausschluss</h4>
         <p>Die KI-gestützte Analyse ist eine Hilfestellung und ersetzt keine professionelle Prüfung. Wir übernehmen keine Haftung für: fehlerhafte Analyseergebnisse (falsche Beträge, IBANs, Fristen), Schäden durch fehlerhafte Überweisungen auf Basis generierter QR-Codes, sowie Datenverlust durch Gerätedefekte oder App-Fehler. Der Nutzer ist selbst verantwortlich, alle extrahierten Daten vor einer Überweisung zu prüfen.</p>
@@ -1180,27 +1005,22 @@ footer a { color: var(--teal); text-decoration: none; }
     <div class="legal-block">
       <button class="legal-toggle" data-i18n="legal_imprint">ℹ️ Impressum</button>
       <div class="legal-content"><div class="legal-inner">
-        <h4>Angaben gemäß § 5 DDG</h4>
-        <p>Maximilian von Korff<br>
-        Martinikirchhof 3<br>
-        32423 Minden<br>
+        <h4>Angaben gemäß § 5 TMG</h4>
+        <p>[Dein vollständiger Name]<br>
+        [Straße und Hausnummer]<br>
+        [PLZ und Stadt]<br>
         Deutschland</p>
 
         <h4>Kontakt</h4>
-        <p>E-Mail: klarbrief@gmail.com<br>
-        Kontaktformular: <a href="#kontakt" style="color:var(--teal)">Zum Kontaktformular</a></p>
+        <p>E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bccfc9ccccd3cec8fcd7d0ddcedeced5d9da92ddcccc">[email&#160;protected]</a><br>
+        Telefon: [optional]</p>
 
-        <h4>Umsatzsteuer</h4>
-        <p>Kleinunternehmer gemäß § 19 UStG — Umsatzsteuer-Identifikationsnummer nicht vorhanden.</p>
-
-        <h4>Verantwortlich für den Inhalt gem. § 18 Abs. 2 MStV</h4>
-        <p>Maximilian von Korff<br>
-        Martinikirchhof 3<br>
-        32423 Minden<br>
-        Deutschland</p>
+        <h4>Verantwortlich für den Inhalt gem. § 55 Abs. 2 RStV</h4>
+        <p>[Dein vollständiger Name]<br>
+        Anschrift wie oben</p>
 
         <h4>Streitschlichtung</h4>
-        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" style="color:var(--teal)">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
       </div></div>
     </div>
   </div>
@@ -1312,24 +1132,10 @@ const T = {
 de: {
   nav_features:"Features", nav_how:"So funktioniert's", nav_download:"App Store",
   hero_badge:"KI-gestützte Dokumentanalyse",
-  hero_title:'Briefe scannen.<br><span class="coral">Sofort</span> <span class="teal">verstehen.</span><br>In deiner <span class="teal">Muttersprache.</span>',
-  hero_sub:"Scanne Rechnungen, Briefe und Dokumente — KlarBrief erkennt automatisch Beträge, Fristen und Zahlungsdaten. Alles wird in deiner Sprache erklärt und übersetzt — 6 Sprachen verfügbar. Inklusive QR-Code für die sofortige Überweisung und vorgefertigte E-Mail-Antworten mit allen Daten aus dem Scan — antippen, absenden, fertig.",
-  btn_appstore:"Jetzt im App Store", btn_how:"So funktioniert's →",
+  hero_title:'Briefe scannen.<br><span class="coral">Sofort</span> <span class="teal">verstehen.</span>',
+  hero_sub:"Scanne Rechnungen, Briefe und Dokumente — KlarBrief erkennt automatisch Beträge, Fristen und Zahlungsdaten. Inklusive sofortigem QR-Code für die Überweisung.",
+  btn_appstore:"App Store", btn_how:"So funktioniert's →",
   stat_accuracy:"Erkennungsrate", stat_time:"Analysezeit", stat_langs:"Sprachen",
-  nav_pricing:"Preise",
-  hero_cancel:"✓ 3 Scans kostenlos · Jederzeit kündbar",
-  price_tag:"Preise", price_title:"Einfach. Transparent. Fair.", price_desc:"Starte kostenlos — upgrade wenn du bereit bist.",
-  p_free_name:"Free", p_free_sub:"3 Scans zum Testen", p_free_cta:"Kostenlos starten",
-  p_pro_badge:"BELIEBTESTE WAHL", p_pro_name:"Pro", p_pro_yearly:"oder 33,49€/Jahr (spare 20%)", p_pro_cta:"Jetzt starten",
-  p_plus_name:"Pro+", p_plus_yearly:"95,90€/Jahr (spare 20%)", p_plus_cta:"Pro+ wählen",
-  p_cancel:"Jederzeit kündbar. Keine versteckten Kosten.",
-  pf_scan3:"3 Dokumente scannen", pf_ai:"KI-Analyse & OCR", pf_qr:"QR-Code Überweisung",
-  pf_no_unlimited:"Unbegrenzte Scans", pf_no_lang:"6 Sprachen",
-  pf_unlimited:"Unbegrenzt scannen", pf_6lang:"6 Sprachen & Übersetzung", pf_qrfull:"QR-Code & Schnellantworten",
-  pf_history:"Dokumentenverlauf", pf_alarm:"Frist-Alarm",
-  pf_all_pro:"Alles aus Pro", pf_priority:"Prioritäts-Analyse", pf_export:"Export & Archiv",
-  pf_multi:"Multi-Dokument Scan", pf_support:"Prioritäts-Support",
-  price_note:"🚀 <strong>Frühbucher-Preis</strong> — Sichere dir den Launch-Preis, solange er gilt!",
   feat_tag:"Features", feat_title:'Alles, was du brauchst.<br>Nichts, was du nicht brauchst.',
   feat_desc:"KlarBrief verwandelt Papierchaos in digitale Klarheit — mit KI, die wirklich versteht, was auf deiner Rechnung steht.",
   f1_title:"KI-Dokumentanalyse", f1_desc:"GPT-4o liest deine Dokumente — erkennt Beträge, Absender, Fristen und Zahlungsdaten mit 99% Genauigkeit.",
@@ -1353,15 +1159,15 @@ de: {
   fq1:"Ist KlarBrief wirklich kostenlos?", fq2:"Wie sicher sind meine Dokumente?",
   fq3:"Welche Dokumente kann KlarBrief erkennen?", fq4:"Funktioniert die App auch offline?",
   fq5:"Welche Sprachen werden unterstützt?", fq6:"Wie funktioniert der QR-Code?",
-  fa1:"Ja! Du bekommst 3 kostenlose Scans zum Testen. Danach ab 3,49€/Monat oder 33,49€/Jahr — jederzeit kündbar.",
+  fa1:"Ja! Du bekommst 3 kostenlose Scans zum Testen. Danach kannst du auf Pro, Business oder Lifetime upgraden.",
   fa2:"Deine Dokumente werden ausschließlich zur Analyse an die OpenAI API übertragen und dort nicht gespeichert. Die lokale OCR-Analyse läuft komplett auf deinem Gerät.",
   fa3:"Rechnungen, Mahnungen, Verträge, offizielle Briefe, Arztbriefe, Versicherungsschreiben und mehr.",
   fa4:"Die lokale OCR-Texterkennung funktioniert offline mit Apple Vision. Für die vollständige KI-Analyse wird eine Internetverbindung benötigt.",
   fa5:"KlarBrief unterstützt Deutsch, Englisch, Ukrainisch, Türkisch, Russisch und Arabisch.",
   fa6:"KlarBrief generiert einen EPC-konformen QR-Code mit IBAN, Betrag und Verwendungszweck. Einfach mit jeder Banking-App scannen.",
   cta_title:'Bereit für weniger<br>Papierchaos?',
-  cta_desc:"Starte kostenlos mit 3 Scans. Danach ab 3,49€/Monat — jederzeit kündbar.",
-  cta_btn:"Jetzt starten", cta_pill1:"🌍 Weltweit im App Store", cta_pill2:"⭐ 4.9 Sterne",
+  cta_desc:"Lade KlarBrief kostenlos herunter. 3 Scans gratis — dann Premium für unbegrenzte Nutzung.",
+  cta_btn:"Kostenlos laden", cta_pill1:"🌍 Weltweit im App Store", cta_pill2:"⭐ 4.9 Sterne",
   legal_privacy:"🔒 Datenschutzerklärung", legal_terms:"📋 Nutzungsbedingungen", legal_imprint:"ℹ️ Impressum",
   footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Datenschutz</a> · <a href="#legal">Nutzungsbedingungen</a> · <a href="#legal">Impressum</a>',
   demo_tag:"Live Demo", demo_title:"Erlebe KlarBrief in Aktion", demo_desc:"Klicke durch die verschiedenen Screens und entdecke alle Features.",
@@ -1380,24 +1186,10 @@ de: {
 en: {
   nav_features:"Features", nav_how:"How it works", nav_download:"App Store",
   hero_badge:"AI-powered document analysis",
-  hero_title:'Scan letters.<br><span class="coral">Instantly</span> <span class="teal">understand.</span><br>In your <span class="teal">native language.</span>',
-  hero_sub:"Scan invoices, letters and documents — KlarBrief automatically detects amounts, deadlines and payment details. Everything is explained and translated in your language — 6 languages available. Including instant QR code for bank transfers and pre-made email replies with all data from your scan — tap, send, done.",
-  btn_appstore:"Get it on App Store", btn_how:"How it works →",
+  hero_title:'Scan letters.<br><span class="coral">Instantly</span> <span class="teal">understand.</span>',
+  hero_sub:"Scan invoices, letters and documents — KlarBrief automatically detects amounts, deadlines and payment details. Including instant QR code for bank transfers.",
+  btn_appstore:"App Store", btn_how:"How it works →",
   stat_accuracy:"Accuracy rate", stat_time:"Analysis time", stat_langs:"Languages",
-  nav_pricing:"Pricing",
-  hero_cancel:"✓ 3 free scans · Cancel anytime",
-  price_tag:"Pricing", price_title:"Simple. Transparent. Fair.", price_desc:"Start free — upgrade when you're ready.",
-  p_free_name:"Free", p_free_sub:"3 scans to try", p_free_cta:"Start free",
-  p_pro_badge:"MOST POPULAR", p_pro_name:"Pro", p_pro_yearly:"or €29.99/year (save 37%)", p_pro_cta:"Start now",
-  p_plus_name:"Pro+", p_plus_yearly:"€95.90/year (save 20%)", p_plus_cta:"Choose Pro+",
-  p_cancel:"Cancel anytime. No hidden fees.",
-  pf_scan3:"3 document scans", pf_ai:"AI analysis & OCR", pf_qr:"QR code transfers",
-  pf_no_unlimited:"Unlimited scans", pf_no_lang:"6 languages",
-  pf_unlimited:"Unlimited scanning", pf_6lang:"6 languages & translation", pf_qrfull:"QR code & quick replies",
-  pf_history:"Document history", pf_alarm:"Deadline alerts",
-  pf_all_pro:"Everything in Pro", pf_priority:"Priority analysis", pf_export:"Export & archive",
-  pf_multi:"Multi-document scan", pf_support:"Priority support",
-  price_note:"🚀 <strong>Early bird pricing</strong> — Lock in the launch price while it lasts!",
   feat_tag:"Features", feat_title:'Everything you need.<br>Nothing you don\'t.',
   feat_desc:"KlarBrief turns paper chaos into digital clarity — with AI that truly understands what's on your invoice.",
   f1_title:"AI Document Analysis", f1_desc:"GPT-4o reads your documents — recognizes amounts, senders, deadlines and payment details with 99% accuracy.",
@@ -1412,24 +1204,24 @@ en: {
   s3_title:"Transfer", s3_desc:"Scan the QR code with your banking app and transfer directly — no typing.",
   test_tag:"Reviews", test_title:"What our users say", test_desc:"Over 10,000 satisfied users trust KlarBrief every day.",
   t1_text:"“No more typing IBANs! Scan the invoice, generate QR code, done. Saves me at least 20 minutes every week.”",
-  t1_avatar:"S", t1_name:"Sarah M.", t1_role:"Freelancer, London",
+  t1_avatar:"S", t1_name:"Sarah M.", t1_role:"Freelancer, Frankfurt",
   t2_text:"“The language detection is brilliant — my parents receive letters in Arabic and English, KlarBrief understands both instantly.”",
-  t2_avatar:"J", t2_name:"James T.", t2_role:"Small Business Owner, New York",
+  t2_avatar:"J", t2_name:"James T.", t2_role:"Small Business Owner, Düsseldorf",
   t3_text:"“As a property manager I get dozens of invoices per month. KlarBrief completely transformed my workflow. Highly recommended.”",
-  t3_avatar:"P", t3_name:"Priya K.", t3_role:"Property Manager, Toronto",
+  t3_avatar:"P", t3_name:"Priya K.", t3_role:"Property Manager, Stuttgart",
   faq_tag:"FAQ", faq_title:"Questions?", faq_desc:"Everything you need to know about KlarBrief.",
   fq1:"Is KlarBrief really free?", fq2:"How secure are my documents?",
   fq3:"Which documents can KlarBrief recognize?", fq4:"Does the app work offline?",
   fq5:"Which languages are supported?", fq6:"How does the QR code work?",
-  fa1:"Yes! You get 3 free scans per month. Then upgrade to Pro (from €1.99/month) or Pro+ (from €3.99/month) — including a 7-day free trial.",
+  fa1:"Yes! You get 3 free scans to try. Then upgrade to Pro, Business or Lifetime.",
   fa2:"Your documents are only sent to the OpenAI API for analysis and are not stored there. Local OCR runs entirely on your device.",
   fa3:"Invoices, reminders, contracts, official letters, medical letters, insurance documents and more.",
   fa4:"Local OCR text recognition works offline with Apple Vision. An internet connection is needed for full AI analysis.",
   fa5:"KlarBrief supports German, English, Ukrainian, Turkish, Russian and Arabic.",
   fa6:"KlarBrief generates an EPC-compliant QR code with IBAN, amount and reference. Simply scan with any banking app.",
   cta_title:'Ready for less<br>paper chaos?',
-  cta_desc:"Download KlarBrief for free. 3 scans free — then Pro from €1.99/month. 7-day free trial.",
-  cta_btn:"Start now", cta_pill1:"🌍 Available Worldwide", cta_pill2:"⭐ 4.9 Stars",
+  cta_desc:"Download KlarBrief for free. 3 scans included — then Premium for unlimited use.",
+  cta_btn:"Download free", cta_pill1:"🌍 Available Worldwide", cta_pill2:"⭐ 4.9 Stars",
   legal_privacy:"🔒 Privacy Policy", legal_terms:"📋 Terms of Use", legal_imprint:"ℹ️ Imprint",
   footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Privacy</a> · <a href="#legal">Terms</a> · <a href="#legal">Imprint</a>',
   demo_tag:"Live Demo", demo_title:"Experience KlarBrief in Action", demo_desc:"Click through the different screens and discover all features.",
@@ -1448,24 +1240,10 @@ en: {
 uk: {
   nav_features:"Функції", nav_how:"Як це працює", nav_download:"App Store",
   hero_badge:"Аналіз документів на базі ШІ",
-  hero_title:'Скануйте листи.<br><span class="coral">Миттєво</span> <span class="teal">розумійте.</span><br>Вашою <span class="teal">рідною мовою.</span>',
-  hero_sub:"Скануйте рахунки, листи та документи — KlarBrief автоматично розпізнає суми, терміни та платіжні дані. Все пояснюється та перекладається вашою мовою — 6 мов доступно. Включно з миттєвим QR-кодом для переказу та готовими email-відповідями з усіма даними зі сканування — натисніть, надішліть, готово.",
+  hero_title:'Скануйте листи.<br><span class="coral">Миттєво</span> <span class="teal">розумійте.</span>',
+  hero_sub:"Скануйте рахунки, листи та документи — KlarBrief автоматично розпізнає суми, терміни та платіжні дані. Включно з миттєвим QR-кодом для переказу.",
   btn_appstore:"App Store", btn_how:"Як це працює →",
   stat_accuracy:"Точність", stat_time:"Час аналізу", stat_langs:"Мови",
-  nav_pricing:"Ціни",
-  hero_cancel:"✓ 3 безкоштовні сканування · Скасувати будь-коли",
-  price_tag:"Ціни", price_title:"Просто. Прозоро. Чесно.", price_desc:"Почніть безкоштовно — оновіть коли будете готові.",
-  p_free_name:"Free", p_free_sub:"3 сканування для тесту", p_free_cta:"Почати безкоштовно",
-  p_pro_badge:"НАЙПОПУЛЯРНІШИЙ", p_pro_name:"Pro", p_pro_yearly:"або 33,49€/рік (економія 20%)", p_pro_cta:"Почати зараз",
-  p_plus_name:"Pro+", p_plus_yearly:"95,90€/рік (економія 20%)", p_plus_cta:"Обрати Pro+",
-  p_cancel:"Скасувати будь-коли. Без прихованих платежів.",
-  pf_scan3:"3 сканування", pf_ai:"ШІ-аналіз та OCR", pf_qr:"QR-код переказ",
-  pf_no_unlimited:"Безлімітні сканування", pf_no_lang:"6 мов",
-  pf_unlimited:"Безлімітне сканування", pf_6lang:"6 мов та переклад", pf_qrfull:"QR-код та швидкі відповіді",
-  pf_history:"Історія документів", pf_alarm:"Нагадування про терміни",
-  pf_all_pro:"Все з Pro", pf_priority:"Пріоритетний аналіз", pf_export:"Експорт та архів",
-  pf_multi:"Мульти-сканування", pf_support:"Пріоритетна підтримка",
-  price_note:"🚀 <strong>Ціна раннього доступу</strong> — Зафіксуйте ціну запуску, поки вона діє!",
   feat_tag:"Функції", feat_title:'Все, що потрібно.<br>Нічого зайвого.',
   feat_desc:"KlarBrief перетворює паперовий хаос на цифрову ясність — з ШІ, який дійсно розуміє ваші рахунки.",
   f1_title:"ШІ-аналіз документів", f1_desc:"GPT-4o читає ваші документи — розпізнає суми, відправників, терміни та платіжні дані з точністю 99%.",
@@ -1480,23 +1258,23 @@ uk: {
   s3_title:"Переказати", s3_desc:"Скануйте QR-код банківським додатком — без ручного введення.",
   test_tag:"Відгуки", test_title:"Що кажуть наші користувачі", test_desc:"Понад 10 000 задоволених користувачів довіряють KlarBrief.",
   t1_text:"«Нарешті не треба вводити IBAN вручну! Сканую рахунок, генерую QR-код — готово. Економлю щонайменше 20 хвилин щотижня.»",
-  t1_avatar:"О", t1_name:"Олена С.", t1_role:"Фрілансерка, Київ",
+  t1_avatar:"О", t1_name:"Олена С.", t1_role:"Фрілансерка, Мюнхен",
   t2_text:"«Розпізнавання мов — це геніально. Мої батьки отримують листи українською та німецькою, KlarBrief розуміє обидві мови миттєво.»",
-  t2_avatar:"А", t2_name:"Андрій М.", t2_role:"Підприємець, Львів",
+  t2_avatar:"А", t2_name:"Андрій М.", t2_role:"Підприємець, Берлін",
   t3_text:"«Як бухгалтер я отримую десятки рахунків щомісяця. KlarBrief повністю змінив мій робочий процес. Абсолютно рекомендую.»",
-  t3_avatar:"І", t3_name:"Ірина К.", t3_role:"Бухгалтер, Одеса",
+  t3_avatar:"І", t3_name:"Ірина К.", t3_role:"Бухгалтер, Гамбург",
   faq_tag:"Часті питання", faq_title:"Є питання?", faq_desc:"Все, що потрібно знати про KlarBrief.",
   fq1:"KlarBrief дійсно безкоштовний?", fq2:"Наскільки безпечні мої документи?",
   fq3:"Які документи розпізнає KlarBrief?", fq4:"Чи працює додаток офлайн?",
   fq5:"Які мови підтримуються?", fq6:"Як працює QR-код?",
-  fa1:"Так! Ви отримуєте 3 безкоштовні сканування. Потім від 3,49€/місяць або 33,49€/рік — скасувати будь-коли.",
+  fa1:"Так! Ви отримуєте 3 безкоштовні сканування. Потім можете оновити до Pro, Business або Lifetime.",
   fa2:"Ваші документи надсилаються до OpenAI API лише для аналізу і не зберігаються. Локальний OCR працює повністю на вашому пристрої.",
   fa3:"Рахунки, нагадування, договори, офіційні листи, медичні довідки, страхові документи та інше.",
   fa4:"Локальне OCR-розпізнавання працює офлайн з Apple Vision. Для повного ШІ-аналізу потрібен інтернет.",
   fa5:"KlarBrief підтримує німецьку, англійську, українську, турецьку, російську та арабську мови.",
   fa6:"KlarBrief генерує EPC-сумісний QR-код з IBAN, сумою та призначенням платежу. Просто скануйте будь-яким банківським додатком.",
   cta_title:'Готові до менше<br>паперового хаосу?',
-  cta_desc:"Почніть безкоштовно з 3 сканувань. Потім від 3,49€/місяць — скасувати будь-коли.",
+  cta_desc:"Завантажте KlarBrief безкоштовно. 3 сканування безкоштовно — потім Premium для необмеженого використання.",
   cta_btn:"Завантажити безкоштовно", cta_pill1:"🌍 Доступно по всьому світу", cta_pill2:"⭐ 4.9 зірок",
   legal_privacy:"🔒 Політика конфіденційності", legal_terms:"📋 Умови використання", legal_imprint:"ℹ️ Імпресум",
   footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Конфіденційність</a> · <a href="#legal">Умови</a> · <a href="#legal">Імпресум</a>',
@@ -1516,24 +1294,10 @@ uk: {
 tr: {
   nav_features:"Özellikler", nav_how:"Nasıl çalışır", nav_download:"App Store",
   hero_badge:"Yapay zeka destekli belge analizi",
-  hero_title:'Mektupları tarayın.<br><span class="coral">Anında</span> <span class="teal">anlayın.</span><br>Kendi <span class="teal">ana dilinizde.</span>',
-  hero_sub:"Faturaları, mektupları ve belgeleri tarayın — KlarBrief tutarları, son tarihleri ve ödeme bilgilerini otomatik olarak tanır. Her şey sizin dilinizde açıklanır ve çevrilir — 6 dil mevcut. Anında banka havalesi için QR kodu ve taramadaki tüm verilerle hazır e-posta yanıtları dahil — dokun, gönder, bitti.",
+  hero_title:'Mektupları tarayın.<br><span class="coral">Anında</span> <span class="teal">anlayın.</span>',
+  hero_sub:"Faturaları, mektupları ve belgeleri tarayın — KlarBrief tutarları, son tarihleri ve ödeme bilgilerini otomatik olarak tanır. Anında banka havalesi için QR kodu dahil.",
   btn_appstore:"App Store", btn_how:"Nasıl çalışır →",
   stat_accuracy:"Doğruluk oranı", stat_time:"Analiz süresi", stat_langs:"Dil",
-  nav_pricing:"Fiyatlar",
-  hero_cancel:"✓ 3 ücretsiz tarama · İstediğin zaman iptal et",
-  price_tag:"Fiyatlar", price_title:"Basit. Şeffaf. Adil.", price_desc:"Ücretsiz başla — hazır olduğunda yükselt.",
-  p_free_name:"Free", p_free_sub:"3 deneme taraması", p_free_cta:"Ücretsiz başla",
-  p_pro_badge:"EN POPÜLERİ", p_pro_name:"Pro", p_pro_yearly:"veya 33,49€/yıl (%20 tasarruf)", p_pro_cta:"Şimdi başla",
-  p_plus_name:"Pro+", p_plus_yearly:"95,90€/yıl (%20 tasarruf)", p_plus_cta:"Pro+ seç",
-  p_cancel:"İstediğin zaman iptal et. Gizli ücret yok.",
-  pf_scan3:"3 belge tarama", pf_ai:"YZ analizi & OCR", pf_qr:"QR kod transferi",
-  pf_no_unlimited:"Sınırsız tarama", pf_no_lang:"6 dil",
-  pf_unlimited:"Sınırsız tarama", pf_6lang:"6 dil ve çeviri", pf_qrfull:"QR kod & hızlı yanıtlar",
-  pf_history:"Belge geçmişi", pf_alarm:"Vade alarmı",
-  pf_all_pro:"Pro'daki her şey", pf_priority:"Öncelikli analiz", pf_export:"Dışa aktarma & arşiv",
-  pf_multi:"Çoklu belge tarama", pf_support:"Öncelikli destek",
-  price_note:"🚀 <strong>Erken kuş fiyatı</strong> — Lansman fiyatını şimdi yakala!",
   feat_tag:"Özellikler", feat_title:'İhtiyacın olan her şey.<br>Gereksiz hiçbir şey.',
   feat_desc:"KlarBrief kağıt kaosunu dijital netliğe dönüştürür — faturanızı gerçekten anlayan yapay zeka ile.",
   f1_title:"YZ Belge Analizi", f1_desc:"GPT-4o belgelerinizi okur — tutarları, göndericileri, son tarihleri ve ödeme bilgilerini %99 doğrulukla tanır.",
@@ -1548,23 +1312,23 @@ tr: {
   s3_title:"Transfer et", s3_desc:"QR kodunu banka uygulamanızla tarayın — elle yazma yok.",
   test_tag:"Değerlendirmeler", test_title:"Kullanıcılarımız ne diyor", test_desc:"10.000'den fazla memnun kullanıcı her gün KlarBrief'e güveniyor.",
   t1_text:"“Artık IBAN yazmak yok! Faturayı tara, QR kodu oluştur, bitti. Her hafta en az 20 dakika kazandırıyor.”",
-  t1_avatar:"M", t1_name:"Mehmet Y.", t1_role:"Serbest Çalışan, İstanbul",
+  t1_avatar:"M", t1_name:"Mehmet Y.", t1_role:"Serbest Çalışan, Köln",
   t2_text:"“Dil algılama harika — ailem Türkçe ve Almanca mektuplar alıyor, KlarBrief ikisini de anında anlıyor.”",
-  t2_avatar:"E", t2_name:"Elif A.", t2_role:"Öğrenci, Ankara",
+  t2_avatar:"E", t2_name:"Elif A.", t2_role:"Öğrenci, Berlin",
   t3_text:"“Mülk yöneticisi olarak ayda düzinelerce fatura alıyorum. KlarBrief iş akışımı tamamen değiştirdi. Kesinlikle tavsiye ederim.”",
-  t3_avatar:"H", t3_name:"Hasan D.", t3_role:"Mülk Yöneticisi, İzmir",
+  t3_avatar:"H", t3_name:"Hasan D.", t3_role:"Mülk Yöneticisi, Dortmund",
   faq_tag:"SSS", faq_title:"Sorularınız mı var?", faq_desc:"KlarBrief hakkında bilmeniz gereken her şey.",
   fq1:"KlarBrief gerçekten ücretsiz mi?", fq2:"Belgelerim ne kadar güvende?",
   fq3:"KlarBrief hangi belgeleri tanıyabilir?", fq4:"Uygulama çevrimdışı çalışır mı?",
   fq5:"Hangi diller destekleniyor?", fq6:"QR kodu nasıl çalışır?",
-  fa1:"Evet! 3 ücretsiz tarama alırsınız. Sonra 3,49€/aydan veya 33,49€/yıldan — istediğiniz zaman iptal edin.",
+  fa1:"Evet! Denemek için 3 ücretsiz tarama alırsınız. Sonra Pro, Business veya Lifetime'a yükseltebilirsiniz.",
   fa2:"Belgeleriniz yalnızca analiz için OpenAI API'ye gönderilir ve orada saklanmaz. Yerel OCR tamamen cihazınızda çalışır.",
   fa3:"Faturalar, hatırlatmalar, sözleşmeler, resmi mektuplar, tıbbi raporlar, sigorta belgeleri ve daha fazlası.",
   fa4:"Yerel OCR metin tanıma Apple Vision ile çevrimdışı çalışır. Tam YZ analizi için internet bağlantısı gereklidir.",
   fa5:"KlarBrief Almanca, İngilizce, Ukraynaca, Türkçe, Rusça ve Arapça destekler.",
   fa6:"KlarBrief, IBAN, tutar ve açıklama içeren EPC uyumlu bir QR kodu oluşturur. Herhangi bir banka uygulamasıyla tarayın.",
   cta_title:'Daha az kağıt kaosuna<br>hazır mısınız?',
-  cta_desc:"3 ücretsiz tarama ile başlayın. Sonra 3,49€/aydan — istediğiniz zaman iptal edin.",
+  cta_desc:"KlarBrief'i ücretsiz indirin. 3 ücretsiz tarama — ardından sınırsız kullanım için Premium.",
   cta_btn:"Ücretsiz indir", cta_pill1:"🌍 Dünya Genelinde App Store'da", cta_pill2:"⭐ 4.9 Yıldız",
   legal_privacy:"🔒 Gizlilik Politikası", legal_terms:"📋 Kullanım Koşulları", legal_imprint:"ℹ️ Künye",
   footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Gizlilik</a> · <a href="#legal">Koşullar</a> · <a href="#legal">Künye</a>',
@@ -1584,24 +1348,10 @@ tr: {
 ru: {
   nav_features:"Функции", nav_how:"Как это работает", nav_download:"App Store",
   hero_badge:"Анализ документов на базе ИИ",
-  hero_title:'Сканируйте письма.<br><span class="coral">Мгновенно</span> <span class="teal">понимайте.</span><br>На вашем <span class="teal">родном языке.</span>',
-  hero_sub:"Сканируйте счета, письма и документы — KlarBrief автоматически распознаёт суммы, сроки и платёжные данные. Всё объясняется и переводится на ваш язык — 6 языков доступно. Включая мгновенный QR-код для перевода и готовые email-ответы со всеми данными из скана — нажмите, отправьте, готово.",
+  hero_title:'Сканируйте письма.<br><span class="coral">Мгновенно</span> <span class="teal">понимайте.</span>',
+  hero_sub:"Сканируйте счета, письма и документы — KlarBrief автоматически распознаёт суммы, сроки и платёжные данные. Включая мгновенный QR-код для перевода.",
   btn_appstore:"App Store", btn_how:"Как это работает →",
   stat_accuracy:"Точность", stat_time:"Время анализа", stat_langs:"Языков",
-  nav_pricing:"Цены",
-  hero_cancel:"✓ 3 бесплатных скана · Отмена в любое время",
-  price_tag:"Цены", price_title:"Просто. Прозрачно. Честно.", price_desc:"Начните бесплатно — обновите когда будете готовы.",
-  p_free_name:"Free", p_free_sub:"3 сканирования для теста", p_free_cta:"Начать бесплатно",
-  p_pro_badge:"САМЫЙ ПОПУЛЯРНЫЙ", p_pro_name:"Pro", p_pro_yearly:"или 33,49€/год (экономия 20%)", p_pro_cta:"Начать сейчас",
-  p_plus_name:"Pro+", p_plus_yearly:"95,90€/год (экономия 20%)", p_plus_cta:"Выбрать Pro+",
-  p_cancel:"Отмена в любое время. Без скрытых платежей.",
-  pf_scan3:"3 сканирования", pf_ai:"ИИ-анализ и OCR", pf_qr:"QR-код перевод",
-  pf_no_unlimited:"Безлимитные сканы", pf_no_lang:"6 языков",
-  pf_unlimited:"Безлимитное сканирование", pf_6lang:"6 языков и перевод", pf_qrfull:"QR-код и быстрые ответы",
-  pf_history:"История документов", pf_alarm:"Напоминание о сроках",
-  pf_all_pro:"Всё из Pro", pf_priority:"Приоритетный анализ", pf_export:"Экспорт и архив",
-  pf_multi:"Мульти-сканирование", pf_support:"Приоритетная поддержка",
-  price_note:"🚀 <strong>Цена раннего доступа</strong> — Зафиксируйте цену запуска, пока она действует!",
   feat_tag:"Функции", feat_title:'Всё, что нужно.<br>Ничего лишнего.',
   feat_desc:"KlarBrief превращает бумажный хаос в цифровую ясность — с ИИ, который действительно понимает ваши счета.",
   f1_title:"ИИ-анализ документов", f1_desc:"GPT-4o читает ваши документы — распознаёт суммы, отправителей, сроки и платёжные данные с точностью 99%.",
@@ -1616,23 +1366,23 @@ ru: {
   s3_title:"Перевести", s3_desc:"Сканируйте QR-код банковским приложением — без ручного ввода.",
   test_tag:"Отзывы", test_title:"Что говорят наши пользователи", test_desc:"Более 10 000 довольных пользователей доверяют KlarBrief.",
   t1_text:"«Наконец-то не нужно вводить IBAN вручную! Сканирую счёт, генерирую QR-код — готово. Экономлю минимум 20 минут каждую неделю.»",
-  t1_avatar:"Е", t1_name:"Елена С.", t1_role:"Фрилансер, Москва",
+  t1_avatar:"Е", t1_name:"Елена С.", t1_role:"Фрилансер, Мюнхен",
   t2_text:"«Распознавание языков — это гениально. Мои родители получают письма на русском и немецком, KlarBrief понимает оба мгновенно.»",
-  t2_avatar:"Д", t2_name:"Дмитрий К.", t2_role:"Предприниматель, Санкт-Петербург",
+  t2_avatar:"Д", t2_name:"Дмитрий К.", t2_role:"Предприниматель, Берлин",
   t3_text:"«Как бухгалтер я получаю десятки счетов в месяц. KlarBrief полностью изменил мой рабочий процесс. Абсолютная рекомендация.»",
-  t3_avatar:"Н", t3_name:"Наталья В.", t3_role:"Бухгалтер, Новосибирск",
+  t3_avatar:"Н", t3_name:"Наталья В.", t3_role:"Бухгалтер, Гамбург",
   faq_tag:"Частые вопросы", faq_title:"Есть вопросы?", faq_desc:"Всё, что нужно знать о KlarBrief.",
   fq1:"KlarBrief действительно бесплатный?", fq2:"Насколько безопасны мои документы?",
   fq3:"Какие документы распознаёт KlarBrief?", fq4:"Работает ли приложение офлайн?",
   fq5:"Какие языки поддерживаются?", fq6:"Как работает QR-код?",
-  fa1:"Да! Вы получаете 3 бесплатных сканирования. Затем от 3,49€/месяц или 33,49€/год — отмена в любое время.",
+  fa1:"Да! Вы получаете 3 бесплатных сканирования. Затем можете обновить до Pro, Business или Lifetime.",
   fa2:"Ваши документы отправляются в OpenAI API только для анализа и не сохраняются. Локальный OCR работает полностью на вашем устройстве.",
   fa3:"Счета, напоминания, договоры, официальные письма, медицинские справки, страховые документы и другое.",
   fa4:"Локальное OCR-распознавание работает офлайн с Apple Vision. Для полного ИИ-анализа нужен интернет.",
   fa5:"KlarBrief поддерживает немецкий, английский, украинский, турецкий, русский и арабский.",
   fa6:"KlarBrief генерирует EPC-совместимый QR-код с IBAN, суммой и назначением. Просто сканируйте любым банковским приложением.",
   cta_title:'Готовы к меньшему<br>бумажному хаосу?',
-  cta_desc:"Начните бесплатно с 3 сканирований. Затем от 3,49€/месяц — отмена в любое время.",
+  cta_desc:"Скачайте KlarBrief бесплатно. 3 сканирования бесплатно — затем Premium для безлимитного использования.",
   cta_btn:"Скачать бесплатно", cta_pill1:"🌍 Доступно по всему миру", cta_pill2:"⭐ 4.9 звёзд",
   legal_privacy:"🔒 Политика конфиденциальности", legal_terms:"📋 Условия использования", legal_imprint:"ℹ️ Импрессум",
   footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Конфиденциальность</a> · <a href="#legal">Условия</a> · <a href="#legal">Импрессум</a>',
@@ -1652,24 +1402,10 @@ ru: {
 ar: {
   nav_features:"المزايا", nav_how:"كيف يعمل", nav_download:"App Store",
   hero_badge:"تحليل المستندات بالذكاء الاصطناعي",
-  hero_title:'امسح الرسائل.<br><span class="coral">افهمها</span> <span class="teal">فوراً.</span><br>بلغتك <span class="teal">الأم.</span>',
-  hero_sub:"امسح الفواتير والرسائل والمستندات — KlarBrief يتعرف تلقائياً على المبالغ والمواعيد وبيانات الدفع. كل شيء يُشرح ويُترجم بلغتك — 6 لغات متاحة. مع رمز QR فوري للتحويل البنكي وردود بريد إلكتروني جاهزة بجميع البيانات من المسح — انقر، أرسل، انتهى.",
+  hero_title:'امسح الرسائل.<br><span class="coral">افهمها</span> <span class="teal">فوراً.</span>',
+  hero_sub:"امسح الفواتير والرسائل والمستندات — KlarBrief يتعرف تلقائياً على المبالغ والمواعيد وبيانات الدفع. مع رمز QR فوري للتحويل البنكي.",
   btn_appstore:"App Store", btn_how:"كيف يعمل ←",
   stat_accuracy:"نسبة الدقة", stat_time:"وقت التحليل", stat_langs:"لغات",
-  nav_pricing:"الأسعار",
-  hero_cancel:"✓ 3 مسحات مجانية · إلغاء في أي وقت",
-  price_tag:"الأسعار", price_title:"بسيط. شفاف. عادل.", price_desc:"ابدأ مجاناً — قم بالترقية عندما تكون جاهزاً.",
-  p_free_name:"Free", p_free_sub:"3 مسحات للتجربة", p_free_cta:"ابدأ مجاناً",
-  p_pro_badge:"الأكثر شعبية", p_pro_name:"Pro", p_pro_yearly:"أو 33,49€/سنة (وفر 20%)", p_pro_cta:"ابدأ الآن",
-  p_plus_name:"Pro+", p_plus_yearly:"95,90€/سنة (وفر 20%)", p_plus_cta:"اختر Pro+",
-  p_cancel:"إلغاء في أي وقت. بدون رسوم مخفية.",
-  pf_scan3:"3 مسحات", pf_ai:"تحليل ذكي و OCR", pf_qr:"تحويل QR",
-  pf_no_unlimited:"مسح غير محدود", pf_no_lang:"6 لغات",
-  pf_unlimited:"مسح غير محدود", pf_6lang:"6 لغات وترجمة", pf_qrfull:"QR وردود سريعة",
-  pf_history:"سجل المستندات", pf_alarm:"تنبيه المواعيد",
-  pf_all_pro:"كل شيء في Pro", pf_priority:"تحليل أولوية", pf_export:"تصدير وأرشيف",
-  pf_multi:"مسح متعدد", pf_support:"دعم أولوية",
-  price_note:"🚀 <strong>سعر الطيور المبكرة</strong> — احجز سعر الإطلاق قبل أن ينتهي!",
   feat_tag:"المزايا", feat_title:'كل ما تحتاجه.<br>لا شيء لا تحتاجه.',
   feat_desc:"KlarBrief يحول فوضى الأوراق إلى وضوح رقمي — بذكاء اصطناعي يفهم فواتيرك حقاً.",
   f1_title:"تحليل المستندات بالذكاء الاصطناعي", f1_desc:"GPT-4o يقرأ مستنداتك — يتعرف على المبالغ والمرسلين والمواعيد وبيانات الدفع بدقة 99%.",
@@ -1684,23 +1420,23 @@ ar: {
   s3_title:"تحويل", s3_desc:"امسح رمز QR بتطبيق البنك وحوّل مباشرة — بدون كتابة يدوية.",
   test_tag:"التقييمات", test_title:"ماذا يقول مستخدمونا", test_desc:"أكثر من 10,000 مستخدم راضٍ يثقون بـ KlarBrief يومياً.",
   t1_text:"“أخيراً لا حاجة لكتابة IBAN يدوياً! امسح الفاتورة، أنشئ رمز QR، انتهى. يوفر لي 20 دقيقة على الأقل كل أسبوع.”",
-  t1_avatar:"أ", t1_name:"أحمد م.", t1_role:"مستقل، دبي",
+  t1_avatar:"أ", t1_name:"أحمد م.", t1_role:"مستقل، فرانكفورت",
   t2_text:"“التعرف على اللغات رائع — والداي يستقبلان رسائل بالعربية والألمانية، وKlarBrief يفهم كليهما فوراً.”",
-  t2_avatar:"ف", t2_name:"فاطمة ك.", t2_role:"طالبة، الرياض",
+  t2_avatar:"ف", t2_name:"فاطمة ك.", t2_role:"طالبة، برلين",
   t3_text:"“كمدير عقارات أستقبل عشرات الفواتير شهرياً. KlarBrief غيّر سير عملي بالكامل. أنصح به بشدة.”",
-  t3_avatar:"م", t3_name:"محمد ع.", t3_role:"مدير عقارات، القاهرة",
+  t3_avatar:"م", t3_name:"محمد ع.", t3_role:"مدير عقارات، هامبورغ",
   faq_tag:"الأسئلة الشائعة", faq_title:"لديك أسئلة؟", faq_desc:"كل ما تحتاج معرفته عن KlarBrief.",
   fq1:"هل KlarBrief مجاني حقاً؟", fq2:"ما مدى أمان مستنداتي؟",
   fq3:"أي المستندات يتعرف عليها KlarBrief؟", fq4:"هل يعمل التطبيق بدون إنترنت؟",
   fq5:"ما اللغات المدعومة؟", fq6:"كيف يعمل رمز QR؟",
-  fa1:"نعم! تحصل على 3 مسحات مجانية. ثم من 3,49€/شهر أو 33,49€/سنة — إلغاء في أي وقت.",
+  fa1:"نعم! تحصل على 3 مسحات مجانية للتجربة. ثم يمكنك الترقية إلى Pro أو Business أو Lifetime.",
   fa2:"مستنداتك تُرسل فقط إلى OpenAI API للتحليل ولا تُخزن هناك. OCR المحلي يعمل بالكامل على جهازك.",
   fa3:"الفواتير والتذكيرات والعقود والرسائل الرسمية والتقارير الطبية ووثائق التأمين والمزيد.",
   fa4:"التعرف المحلي على النص يعمل بدون إنترنت مع Apple Vision. للتحليل الكامل بالذكاء الاصطناعي يلزم اتصال بالإنترنت.",
   fa5:"KlarBrief يدعم الألمانية والإنجليزية والأوكرانية والتركية والروسية والعربية.",
   fa6:"KlarBrief ينشئ رمز QR متوافق مع EPC يحتوي على IBAN والمبلغ والغرض. ببساطة امسحه بأي تطبيق بنكي.",
   cta_title:'مستعد لفوضى ورق<br>أقل؟',
-  cta_desc:"ابدأ مجاناً مع 3 مسحات. ثم من 3,49€/شهر — إلغاء في أي وقت.",
+  cta_desc:"حمّل KlarBrief مجاناً. 3 مسحات مجانية — ثم Premium للاستخدام غير المحدود.",
   cta_btn:"تحميل مجاني", cta_pill1:"🌍 متوفر عالمياً في App Store", cta_pill2:"⭐ 4.9 نجوم",
   legal_privacy:"🔒 سياسة الخصوصية", legal_terms:"📋 شروط الاستخدام", legal_imprint:"ℹ️ البيانات القانونية",
   footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">الخصوصية</a> · <a href="#legal">الشروط</a> · <a href="#legal">البيانات القانونية</a>',
@@ -1795,15 +1531,4 @@ try { savedLang = localStorage.getItem('kb_lang'); } catch(e) {}
 if (savedLang && supported.includes(savedLang)) {
   setLang(savedLang);
 } else {
-  const browserLangs = navigator.languages || [navigator.language || 'de'];
-  let detected = 'de';
-  for (const bl of browserLangs) {
-    const code = bl.toLowerCase().split('-')[0];
-    if (langMap[code]) { detected = langMap[code]; break; }
-  }
-  setLang(detected);
-}
-</script>
-
-</body>
-</html>
+  const browserLangs = navigator.languages || [navigator.languag

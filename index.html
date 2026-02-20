@@ -583,8 +583,9 @@ footer a { color: var(--teal); text-decoration: none; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
 
-.reveal { opacity: 0; transform: translateY(36px); transition: all 0.8s cubic-bezier(0.23,1,0.32,1); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: translateY(0); transition: all 0.8s cubic-bezier(0.23,1,0.32,1); }
+.js-ready .reveal { opacity: 0; transform: translateY(36px); }
+.js-ready .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* === RESPONSIVE === */
 @media (max-width: 960px) {
@@ -1012,7 +1013,7 @@ footer a { color: var(--teal); text-decoration: none; }
         Deutschland</p>
 
         <h4>Kontakt</h4>
-        <p>E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bccfc9ccccd3cec8fcd7d0ddcedeced5d9da92ddcccc">[email&#160;protected]</a><br>
+        <p>E-Mail: <a href="mailto:support@klarbrief.app">support@klarbrief.app</a><br>
         Telefon: [optional]</p>
 
         <h4>Verantwortlich für den Inhalt gem. § 55 Abs. 2 RStV</h4>
@@ -1030,7 +1031,8 @@ footer a { color: var(--teal); text-decoration: none; }
   <p>© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Datenschutz</a> · <a href="#legal">Nutzungsbedingungen</a> · <a href="#legal">Impressum</a></p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+document.documentElement.classList.add('js-ready');
 // Reveal on scroll
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

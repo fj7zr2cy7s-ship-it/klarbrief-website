@@ -616,7 +616,7 @@ footer a { color: var(--teal); text-decoration: none; }
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img class="nav-logo-icon" src="images/image_1.png" alt="KlarBrief Logo">
+    <img class="nav-logo-icon" src="image_1.png" alt="KlarBrief Logo">
     KlarBrief
   </a>
   <div class="nav-links">
@@ -687,7 +687,7 @@ footer a { color: var(--teal); text-decoration: none; }
           <div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
-              <img src="images/image_2.png" alt="KlarBrief App" data-screenshot="image_2.png">
+              <img src="image_2.png" alt="KlarBrief App" data-screenshot="image_2.png">
             </div>
           </div>
 
@@ -721,12 +721,12 @@ footer a { color: var(--teal); text-decoration: none; }
       <div>
         <div class="demo-phone">
           <div class="demo-screen" id="demoScreen">
-            <img data-screen="home" class="active" src="" alt="Home" id="demoImgHome" data-screenshot="image_2.png">
-            <img data-screen="analysis" src="images/image_3.png" alt="Analyse" loading="lazy" data-screenshot="image_3.png">
-            <img data-screen="actions" src="images/image_4.png" alt="Aktionen" loading="lazy" data-screenshot="image_4.png">
-            <img data-screen="qrcodes" src="images/image_5.png" alt="QR-Codes" loading="lazy" data-screenshot="image_5.png">
-            <img data-screen="history" src="images/image_6.png" alt="Verlauf" loading="lazy" data-screenshot="image_6.png">
-            <img data-screen="settings" src="images/image_7.png" alt="Einstellungen" loading="lazy" data-screenshot="image_7.png">
+            <img data-screen="home" class="active" src="image_2.png" alt="Home" id="demoImgHome" data-screenshot="image_2.png">
+            <img data-screen="analysis" src="image_3.png" alt="Analyse" loading="lazy" data-screenshot="image_3.png">
+            <img data-screen="actions" src="image_4.png" alt="Aktionen" loading="lazy" data-screenshot="image_4.png">
+            <img data-screen="qrcodes" src="image_5.png" alt="QR-Codes" loading="lazy" data-screenshot="image_5.png">
+            <img data-screen="history" src="image_6.png" alt="Verlauf" loading="lazy" data-screenshot="image_6.png">
+            <img data-screen="settings" src="image_7.png" alt="Einstellungen" loading="lazy" data-screenshot="image_7.png">
           </div>
         </div>
         <div class="demo-tabs" id="demoTabs">
@@ -1506,7 +1506,7 @@ function setLang(lang) {
   // ===== SCREENSHOT SWAP =====
   // Default (de): images/image_X.png
   // Other langs:  images/screenshots/{lang}/image_X.png
-  var screenshotBase = (lang === 'de') ? 'images/' : 'images/screenshots/' + lang + '/';
+  var screenshotBase = (lang === 'de') ? '' : 'screenshots/' + lang + '/';
   document.querySelectorAll('[data-screenshot]').forEach(function(img) {
     var filename = img.getAttribute('data-screenshot');
     img.src = screenshotBase + filename;

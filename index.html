@@ -990,7 +990,7 @@ footer a { color: var(--teal); text-decoration: none; }
   <div class="legal-blocks">
     
     <!-- DATENSCHUTZERKLÄRUNG -->
-    <div class="legal-block">
+    <div class="legal-block" id="privacy">
       <button class="legal-toggle" data-i18n="legal_privacy">🔒 Datenschutzerklärung</button>
       <div class="legal-content"><div class="legal-inner" id="legalPrivacyInner">
         <h4>1. Verantwortlicher</h4>
@@ -1056,8 +1056,8 @@ footer a { color: var(--teal); text-decoration: none; }
       </div></div>
     </div>
 
-    <!-- NUTZUNGSBEDINGUNGEN (unchanged) -->
-    <div class="legal-block">
+    <!-- NUTZUNGSBEDINGUNGEN -->
+    <div class="legal-block" id="terms">
       <button class="legal-toggle" data-i18n="legal_terms">📋 Nutzungsbedingungen</button>
       <div class="legal-content"><div class="legal-inner">
         <h4>1. Geltungsbereich</h4>
@@ -1079,8 +1079,8 @@ footer a { color: var(--teal); text-decoration: none; }
       </div></div>
     </div>
 
-    <!-- IMPRESSUM (unchanged) -->
-    <div class="legal-block">
+    <!-- IMPRESSUM -->
+    <div class="legal-block" id="imprint">
       <button class="legal-toggle" data-i18n="legal_imprint">ℹ️ Impressum</button>
       <div class="legal-content"><div class="legal-inner">
         <h4>Angaben gemäß § 5 DDG</h4>
@@ -1100,7 +1100,7 @@ footer a { color: var(--teal); text-decoration: none; }
 </section>
 
 <footer>
-  <p>© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#contact">Kontakt</a> · <a href="#legal">Datenschutz</a> · <a href="#legal">Nutzungsbedingungen</a> · <a href="#legal">Impressum</a></p>
+  <p>© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#contact">Kontakt</a> · <a href="#privacy">Datenschutz</a> · <a href="#terms">Nutzungsbedingungen</a> · <a href="#imprint">Impressum</a></p>
 </footer>
 
 <script>
@@ -1152,15 +1152,38 @@ document.querySelectorAll('.legal-toggle').forEach(btn => {
   btn.addEventListener('click', () => { btn.parentElement.classList.toggle('open'); });
 });
 
+// Auto-open legal block based on URL hash (#privacy, #terms, #imprint)
+(function() {
+  var hash = window.location.hash;
+  var targetId = null;
+  if (hash === '#privacy') targetId = 'privacy';
+  else if (hash === '#terms') targetId = 'terms';
+  else if (hash === '#imprint' || hash === '#impressum') targetId = 'imprint';
+  if (targetId) {
+    var block = document.getElementById(targetId);
+    if (block) {
+      block.classList.add('open');
+      setTimeout(function() { block.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+    }
+  }
+})();
+
 // Smooth scroll nav
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   a.addEventListener('click', function(e) {
-    var target = document.querySelector(this.getAttribute('href'));
+    var href = this.getAttribute('href');
+    var target = document.querySelector(href);
     if (target) {
       e.preventDefault();
+      // Auto-open legal block if it's a legal deep link
+      if (target.classList.contains('legal-block')) {
+        document.querySelectorAll('.legal-block.open').forEach(function(b) { b.classList.remove('open'); });
+        target.classList.add('open');
+      }
       var offset = 80;
       var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: top, behavior: 'smooth' });
+      history.replaceState(null, null, href);
     }
   });
 });
@@ -1251,7 +1274,7 @@ de: {
   cta_desc:"3 kostenlose Scans. Kein Risiko. Kein Abo-Zwang. Scanne deinen nächsten Brief — du wirst nie wieder ohne KlarBrief leben wollen.",
   cta_btn:"Jetzt kostenlos laden", cta_pill1:"🌍 Weltweit im App Store",
   legal_privacy:"🔒 Datenschutzerklärung", legal_terms:"📋 Nutzungsbedingungen", legal_imprint:"ℹ️ Impressum",
-  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Datenschutz</a> · <a href="#legal">Nutzungsbedingungen</a> · <a href="#legal">Impressum</a>',
+  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#privacy">Datenschutz</a> · <a href="#terms">Nutzungsbedingungen</a> · <a href="#imprint">Impressum</a>',
   contact_tag:"Kontakt", contact_title:"Schreib uns", contact_desc:"Fragen, Feedback oder Partnerschaftsanfragen? Wir antworten innerhalb von 24 Stunden.", contact_name:"Dein Name", contact_email:"Deine E-Mail", contact_message:"Deine Nachricht", contact_send:"Nachricht senden", contact_success:"✅ Nachricht gesendet! Wir melden uns bald.",
   demo_tag:"Live Demo", demo_title:"Erlebe KlarBrief in Aktion", demo_desc:"Klicke durch die verschiedenen Screens und entdecke alle Features.",
   dtab_home:"Home", dtab_analysis:"Analyse", dtab_details:"Details", dtab_qrcode:"QR-Code", dtab_actions:"Aktionen", dtab_aichat:"AI Chat", dtab_formguide:"Formular", dtab_formfields:"Felder", dtab_qr:"QR-Liste", dtab_history:"Verlauf", dtab_settings:"Einstellungen",
@@ -1312,7 +1335,7 @@ en: {
   cta_desc:"3 free scans. No risk. No commitment. Scan your next letter — you'll never want to live without KlarBrief again.",
   cta_btn:"Download Free Now", cta_pill1:"🌍 Available Worldwide",
   legal_privacy:"🔒 Privacy Policy", legal_terms:"📋 Terms of Use", legal_imprint:"ℹ️ Imprint",
-  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Privacy</a> · <a href="#legal">Terms</a> · <a href="#legal">Imprint</a>',
+  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#privacy">Privacy</a> · <a href="#terms">Terms</a> · <a href="#imprint">Imprint</a>',
   contact_tag:"Contact", contact_title:"Get in touch", contact_desc:"Questions, feedback or partnership inquiries? We respond within 24 hours.", contact_name:"Your name", contact_email:"Your email", contact_message:"Your message", contact_send:"Send message", contact_success:"✅ Message sent! We'll get back to you soon.",
   demo_tag:"Live Demo", demo_title:"Experience KlarBrief in Action", demo_desc:"Click through the different screens and discover all features.",
   dtab_home:"Home", dtab_analysis:"Analysis", dtab_details:"Details", dtab_qrcode:"QR Code", dtab_actions:"Actions", dtab_aichat:"AI Chat", dtab_formguide:"Form", dtab_formfields:"Fields", dtab_qr:"QR List", dtab_history:"History", dtab_settings:"Settings",
@@ -1373,7 +1396,7 @@ uk: {
   cta_desc:"3 безкоштовних сканування. Без ризику. Без зобов'язань. Скануйте наступний лист — назад не захочете.",
   cta_btn:"Завантажити безкоштовно", cta_pill1:"🌍 Доступно по всьому світу",
   legal_privacy:"🔒 Політика конфіденційності", legal_terms:"📋 Умови використання", legal_imprint:"ℹ️ Імпресум",
-  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Конфіденційність</a> · <a href="#legal">Умови</a> · <a href="#legal">Імпресум</a>',
+  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#privacy">Конфіденційність</a> · <a href="#terms">Умови</a> · <a href="#imprint">Імпресум</a>',
   contact_tag:"Контакт", contact_title:"Напишіть нам", contact_desc:"Питання, відгуки або запити на співпрацю? Ми відповідаємо протягом 24 годин.", contact_name:"Ваше ім'я", contact_email:"Ваш email", contact_message:"Ваше повідомлення", contact_send:"Надіслати", contact_success:"✅ Повідомлення надіслано! Ми зв'яжемося з вами найближчим часом.",
   demo_tag:"Демо", demo_title:"Спробуйте KlarBrief в дії", demo_desc:"Перегляньте різні екрани та відкрийте всі функції.",
   dtab_home:"Головна", dtab_analysis:"Аналіз", dtab_details:"Деталі", dtab_qrcode:"QR-код", dtab_actions:"Дії", dtab_aichat:"ШІ Чат", dtab_formguide:"Формуляр", dtab_formfields:"Поля", dtab_qr:"QR-коди", dtab_history:"Історія", dtab_settings:"Налаштування",
@@ -1434,7 +1457,7 @@ tr: {
   cta_desc:"3 ücretsiz tarama. Risk yok. Zorunluluk yok. Bir sonraki mektubunuzu tarayın — KlarBrief olmadan yaşamak istemeyeceksiniz.",
   cta_btn:"Şimdi ücretsiz indir", cta_pill1:"🌍 Dünya Genelinde App Store'da",
   legal_privacy:"🔒 Gizlilik Politikası", legal_terms:"📋 Kullanım Koşulları", legal_imprint:"ℹ️ Künye",
-  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Gizlilik</a> · <a href="#legal">Koşullar</a> · <a href="#legal">Künye</a>',
+  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#privacy">Gizlilik</a> · <a href="#terms">Koşullar</a> · <a href="#imprint">Künye</a>',
   contact_tag:"İletişim", contact_title:"Bize yazın", contact_desc:"Sorular, geri bildirim veya ortaklık talepleri? 24 saat içinde yanıt veriyoruz.", contact_name:"Adınız", contact_email:"E-postanız", contact_message:"Mesajınız", contact_send:"Gönder", contact_success:"✅ Mesaj gönderildi! En kısa sürede dönüş yapacağız.",
   demo_tag:"Demo", demo_title:"KlarBrief'i Keşfedin", demo_desc:"Farklı ekranlara tıklayın ve tüm özellikleri keşfedin.",
   dtab_home:"Ana Sayfa", dtab_analysis:"Analiz", dtab_details:"Detaylar", dtab_qrcode:"QR Kod", dtab_actions:"İşlemler", dtab_aichat:"AI Sohbet", dtab_formguide:"Form", dtab_formfields:"Alanlar", dtab_qr:"QR Kodlar", dtab_history:"Geçmiş", dtab_settings:"Ayarlar",
@@ -1495,7 +1518,7 @@ ru: {
   cta_desc:"3 бесплатных сканирования. Без риска. Без обязательств. Отсканируйте следующее письмо — жить без KlarBrief уже не захотите.",
   cta_btn:"Скачать бесплатно", cta_pill1:"🌍 Доступно по всему миру",
   legal_privacy:"🔒 Политика конфиденциальности", legal_terms:"📋 Условия использования", legal_imprint:"ℹ️ Импрессум",
-  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">Конфиденциальность</a> · <a href="#legal">Условия</a> · <a href="#legal">Импрессум</a>',
+  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#privacy">Конфиденциальность</a> · <a href="#terms">Условия</a> · <a href="#imprint">Импрессум</a>',
   contact_tag:"Контакт", contact_title:"Напишите нам", contact_desc:"Вопросы, отзывы или запросы на сотрудничество? Мы отвечаем в течение 24 часов.", contact_name:"Ваше имя", contact_email:"Ваш email", contact_message:"Ваше сообщение", contact_send:"Отправить", contact_success:"✅ Сообщение отправлено! Мы свяжемся с вами в ближайшее время.",
   demo_tag:"Демо", demo_title:"Попробуйте KlarBrief в действии", demo_desc:"Нажимайте на экраны и откройте для себя все функции.",
   dtab_home:"Главная", dtab_analysis:"Анализ", dtab_details:"Детали", dtab_qrcode:"QR-код", dtab_actions:"Действия", dtab_aichat:"ИИ Чат", dtab_formguide:"Форма", dtab_formfields:"Поля", dtab_qr:"QR-коды", dtab_history:"История", dtab_settings:"Настройки",
@@ -1556,7 +1579,7 @@ ar: {
   cta_desc:"3 مسحات مجانية. بلا مخاطر. بلا التزام. امسح رسالتك التالية — لن تريد العيش بدون KlarBrief مرة أخرى.",
   cta_btn:"حمّل مجاناً الآن", cta_pill1:"🌍 متوفر عالمياً في App Store",
   legal_privacy:"🔒 سياسة الخصوصية", legal_terms:"📋 شروط الاستخدام", legal_imprint:"ℹ️ البيانات القانونية",
-  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#legal">الخصوصية</a> · <a href="#legal">الشروط</a> · <a href="#legal">البيانات القانونية</a>',
+  footer:'© 2026 KlarBrief — Made with 🤍 in Germany · <a href="#privacy">الخصوصية</a> · <a href="#terms">الشروط</a> · <a href="#imprint">البيانات القانونية</a>',
   contact_tag:"اتصل بنا", contact_title:"اكتب لنا", contact_desc:"أسئلة أو ملاحظات أو طلبات شراكة؟ نرد خلال 24 ساعة.", contact_name:"اسمك", contact_email:"بريدك الإلكتروني", contact_message:"رسالتك", contact_send:"إرسال", contact_success:"✅ تم إرسال الرسالة! سنتواصل معك قريباً.",
   demo_tag:"عرض تجريبي", demo_title:"جرّب KlarBrief مباشرة", demo_desc:"تصفّح الشاشات المختلفة واكتشف جميع الميزات.",
   dtab_home:"الرئيسية", dtab_analysis:"التحليل", dtab_details:"التفاصيل", dtab_qrcode:"رمز QR", dtab_actions:"الإجراءات", dtab_aichat:"دردشة AI", dtab_formguide:"النموذج", dtab_formfields:"الحقول", dtab_qr:"رموز QR", dtab_history:"السجل", dtab_settings:"الإعدادات",
